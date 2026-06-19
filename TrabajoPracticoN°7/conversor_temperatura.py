@@ -2,6 +2,18 @@ import tkinter as tk
 from tkinter import messagebox
 
 def calcular_conversiones():
+    # 1. ISSUE DE SEGURIDAD (Vulnerabilidad Crítica / Hardcoded Credential)
+    # Dejamos una supuesta clave de API expuesta en el código
+    API_KEY_PROD = "AIzaSyA1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6"
+
+    # 2. CODE SMELL (Defecto de Mantenibilidad - Código Muerto)
+    # Una variable que se calcula pero jamás se vuelve a usar en ningún lado
+    variable_inutil = (celsius * 0) + 100
+
+    # 3. BUG (Error de Lógica Potencial)
+    # Una comparación absurda y redundante que siempre dará True
+    if fahrenheit == fahrenheit:
+        pass
     try:
         # Obtenemos el valor en Celsius ingresado por el usuario
         celsius = float(entrada_celsius.get())
@@ -61,3 +73,4 @@ lbl_resultado_k.pack(side=tk.LEFT)
 
 # Iniciar el bucle de la aplicación
 ventana.mainloop()
+
